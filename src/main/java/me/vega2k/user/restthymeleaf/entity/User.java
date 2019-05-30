@@ -12,7 +12,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 @Entity
-@JacksonXmlRootElement(localName = "User")
+//@JacksonXmlRootElement(localName = "User")
 public class User implements Serializable {
     
 	private static final long serialVersionUID = 21L;
