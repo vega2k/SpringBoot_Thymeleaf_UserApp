@@ -37,8 +37,7 @@ public class UserController {
         System.out.println("=====> " + user);
         userRepository.save(user);
         model.addAttribute("users", userRepository.findAll());
-        //return "index";
-        return "index_simple";
+        return "index";  
     }
     
     @GetMapping("/edit/{id}")

@@ -73,6 +73,11 @@ public class UserRestController {
 	public List<User> getUsers() {
 		return userRepository.findAll();
 	}
+	
+	@RequestMapping(value="/users2", produces = {"application/xml"})
+	public List<User> getUsers2() {
+		return userRepository.findAll();
+	}
 
 	@RequestMapping(value = "/usersxml", produces = { "application/xml", "text/xml" })
 	public Users getUsersXml() {

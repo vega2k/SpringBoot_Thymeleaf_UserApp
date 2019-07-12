@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.vega2k.user.restthymeleaf.mapper.UserMapper">
+
+	<select id="selectUserById" parameterType="long" resultType="me.vega2k.user.restthymeleaf.entity.User">
+		select * from user where id=#{value}
+	</select>
+
+	<select id="selectUserList" resultType="me.vega2k.user.restthymeleaf.entity.User">
+		select * from user order by id
+	</select>
+
+	<insert id="insertUser" useGeneratedKeys="true"  keyProperty="id"  parameterType="me.vega2k.user.restthymeleaf.entity.User">
+		insert into user (name,email) values (#{name},#{email})
+	</insert>
+
+	<update id="updateUser" parameterType="me.vega2k.user.restthymeleaf.entity.User">
+		update user set
+		name = #{name},
+		email = #{email}
+		where id = #{id}
+	</update>
+
+	<delete id="deleteUser" parameterType="long">
+		delete from user where id = #{value}
+	</delete>
+
+</mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
