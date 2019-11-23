@@ -8,14 +8,13 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@MapperScan(basePackages={"me.vega2k.user.restthymeleaf.mapper"})
+@MapperScan(basePackages={"me.vega2k.user.restthymeleaf.mybatis.mapper"})
 @EnableTransactionManagement
 public class WebConfig implements WebMvcConfigurer {
 	@Override
@@ -30,6 +29,7 @@ public class WebConfig implements WebMvcConfigurer {
         sessionFactory.setDataSource(dataSource);
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         sessionFactory.setMapperLocations(resolver.getResources("classpath:mapper/**/*Mapper.xml"));
+        sessionFactory.setTypeAliasesPackage("me.vega2k.user.restthymeleaf.mybatis.vo");
         return sessionFactory.getObject();		
 	}
 	

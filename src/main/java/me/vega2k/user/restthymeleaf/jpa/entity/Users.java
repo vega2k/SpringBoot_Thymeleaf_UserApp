@@ -1,4 +1,4 @@
-package me.vega2k.user.restthymeleaf.entity;
+package me.vega2k.user.restthymeleaf.jpa.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;

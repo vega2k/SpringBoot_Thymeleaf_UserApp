@@ -1,4 +1,4 @@
-package me.vega2k.user.restthymeleaf.controller;
+package me.vega2k.user.restthymeleaf.jpa.controller;
 
 import javax.validation.Valid;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import me.vega2k.user.restthymeleaf.entity.User;
-import me.vega2k.user.restthymeleaf.repository.UserRepository;
+import me.vega2k.user.restthymeleaf.jpa.entity.User;
+import me.vega2k.user.restthymeleaf.jpa.repository.UserRepository;
 
 @Controller
 public class UserController {

@@ -1,33 +1,19 @@
-package me.vega2k.user.restthymeleaf.entity;
+package me.vega2k.user.restthymeleaf.mybatis.vo;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-
-@Entity
-//@JacksonXmlRootElement(localName = "User")
 public class User implements Serializable {
     
 	private static final long serialVersionUID = 21L;
 	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JacksonXmlProperty(isAttribute = true)
     private long id;
     
     @NotBlank(message = "Name is mandatory")
-    @JacksonXmlProperty
     private String name;
     
     @NotBlank(message = "Email is mandatory")
-    @JacksonXmlProperty
     private String email;
 
     public User() {}

@@ -1,4 +1,4 @@
-package me.vega2k.user.restthymeleaf.controller;
+package me.vega2k.user.restthymeleaf.mybatis.controller;
 
 import javax.validation.Valid;
 
@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import me.vega2k.user.restthymeleaf.entity.User;
-import me.vega2k.user.restthymeleaf.mapper.UserMapper;
+import me.vega2k.user.restthymeleaf.mybatis.dao.UserDao;
+import me.vega2k.user.restthymeleaf.mybatis.vo.User;
 
 @Controller
 public class UserControllerMybatis {
 	@Autowired
-	UserMapper userMapper;
+	UserDao userDao;
 	
 	@GetMapping("/index_mybatis")
 	public String index(Model model) {
-		model.addAttribute("users", userMapper.selectUserList());
+		model.addAttribute("users", userDao.readAll());
 		return "mybatis/index";
 	}
 	
@@ -35,14 +35,14 @@ public class UserControllerMybatis {
             return "mybatis/add-user";
         }
         System.out.println("=====> " + user);
-        userMapper.insertUser(user);
-        model.addAttribute("users", userMapper.selectUserList());
+        userDao.insert(user);
+        model.addAttribute("users", userDao.readAll());
         return "mybatis/index";
     }
     
     @GetMapping("/edit_mybatis/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
-        User user = userMapper.selectUserById(id);
+        User user = userDao.read(id);
         if(user == null)
         	new IllegalArgumentException("Invalid user Id:" + id);
         model.addAttribute("user", user);
@@ -56,18 +56,18 @@ public class UserControllerMybatis {
             return "mybatis/update-user";
         }
         
-        userMapper.updateUser(user);
-        model.addAttribute("users", userMapper.selectUserList());
+        userDao.update(user);
+        model.addAttribute("users", userDao.readAll());
         return "mybatis/index";
     }
     
     @GetMapping("/delete_mybatis/{id}")
     public String deleteUser(@PathVariable("id") long id, Model model) {
-        User user = userMapper.selectUserById(id);
+        User user = userDao.read(id);
         if(user == null)
         	new IllegalArgumentException("Invalid user Id:" + id);
-        userMapper.deleteUser(id);
-        model.addAttribute("users", userMapper.selectUserList());
+        userDao.delete(id);
+        model.addAttribute("users", userDao.readAll());
         return "mybatis/index";
     }
 }

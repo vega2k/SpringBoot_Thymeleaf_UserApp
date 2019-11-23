@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -56,23 +57,31 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 
-		<!-- Spring jdbc, Mybatis, Mybatis-Spring  -->
+		<!-- Spring jdbc, Mybatis, Mybatis-Spring -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.mybatis</groupId> -->
+<!-- 			<artifactId>mybatis</artifactId> -->
+<!-- 			<version>3.3.1</version> -->
+<!-- 		</dependency> -->
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.mybatis</groupId> -->
+<!-- 			<artifactId>mybatis-spring</artifactId> -->
+<!-- 			<version>1.2.4</version> -->
+<!-- 		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
 		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>3.3.1</version>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>1.2.4</version>
-		</dependency>
 	</dependencies>
 
 	<build>

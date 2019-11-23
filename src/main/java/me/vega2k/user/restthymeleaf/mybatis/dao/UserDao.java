@@ -1,8 +1,8 @@
-package me.vega2k.user.restthymeleaf.dao;
+package me.vega2k.user.restthymeleaf.mybatis.dao;
 
 import java.util.List;
 
-import me.vega2k.user.restthymeleaf.entity.User;
+import me.vega2k.user.restthymeleaf.mybatis.vo.User;
 
 public interface UserDao {
 	public void insert(User user);

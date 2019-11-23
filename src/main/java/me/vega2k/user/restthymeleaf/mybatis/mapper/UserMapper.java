@@ -1,7 +1,8 @@
-package me.vega2k.user.restthymeleaf.mapper;
+package me.vega2k.user.restthymeleaf.mybatis.mapper;
 
 import java.util.List;
-import me.vega2k.user.restthymeleaf.entity.User;
+
+import me.vega2k.user.restthymeleaf.mybatis.vo.User;
 
 public interface UserMapper {
 	User selectUserById(Long id);
